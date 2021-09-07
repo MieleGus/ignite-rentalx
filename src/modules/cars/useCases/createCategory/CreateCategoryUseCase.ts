@@ -1,11 +1,11 @@
-import { ICategoriesRepository } from "../repositores/ICategoriesRepository";
+import { ICategoriesRepository } from "../../repositores/ICategoriesRepository";
 
 interface IRequest {
     name: string;
     description: string;
 }
 // camada de domínio não precisa conhecer da camada de infra
-class CreatedCategoryService {
+class CreateCategoryUseCase {
     constructor(private categoriesRepository: ICategoriesRepository) {}
 
     execute({ name, description }: IRequest): void {
@@ -21,4 +21,4 @@ class CreatedCategoryService {
     }
 }
 
-export { CreatedCategoryService };
+export { CreateCategoryUseCase };
