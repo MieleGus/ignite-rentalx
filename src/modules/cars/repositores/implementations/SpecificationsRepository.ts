@@ -1,4 +1,3 @@
-import { Category } from "../../model/Category";
 import { Specification } from "../../model/Specification";
 import {
     ICreateSpecificationDTO,
