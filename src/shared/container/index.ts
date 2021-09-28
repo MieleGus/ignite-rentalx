@@ -1,3 +1,10 @@
 import { container } from "tsyringe";
 
-container.registerSingleton();
+import { ICategoriesRepository } from "../../modules/cars/repositores/ICategoriesRepository";
+
+import { CategoriesRepository } from "../../modules/cars/repositores/implementations/CategoriesRepository";
+
+container.registerSingleton<ICategoriesRepository>(
+    "CategoriesRepository",
+    CategoriesRepository
+);

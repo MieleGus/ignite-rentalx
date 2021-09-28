@@ -1,3 +1,5 @@
+import { inject, injectable } from "tsyringe";
+
 import { ICategoriesRepository } from "../../repositores/ICategoriesRepository";
 
 interface IRequest {
@@ -5,8 +7,12 @@ interface IRequest {
     description: string;
 }
 // camada de domínio não precisa conhecer da camada de infra
+@injectable()
 class CreateCategoryUseCase {
-    constructor(private categoriesRepository: ICategoriesRepository) {}
+    constructor(
+        @inject("CategoriesRepository")
+        private categoriesRepository: ICategoriesRepository
+    ) {}
 
     async execute({ name, description }: IRequest): Promise<void> {
         const categoryAlreadyExists = await this.categoriesRepository.findByName(
