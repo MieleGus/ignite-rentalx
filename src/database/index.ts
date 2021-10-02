@@ -4,7 +4,7 @@ console.log("arq datbase    @#$#@dsodas");
 createConnection({
     type: "postgres",
     port: 5432,
-    host: "172.21.0.2",
+    host: "172.18.0.2",
     username: "docker",
     password: "ignite",
     database: "rentx",
